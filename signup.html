@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>medREX signup</title>
+  <link rel="stylesheet" href="signup.css">
+  <script>
+		function storeUserData() {
+			var username = document.getElementById("username").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var age = document.getElementById("age").value;
+			var gender = document.getElementById("gender").value;
+			var phone = document.getElementById("phone").value;
+			localStorage.setItem("email", email);
+			localStorage.setItem("password", password);
+			localStorage.setItem("username", username);
+			localStorage.setItem("age", age);
+			localStorage.setItem("gender", gender);
+			localStorage.setItem("phone", phone);
+			alert("User data stored successfully!");
+		}
+	</script>
+</head>
+
+<body>
+  <!-- <nav>
+    <img src="1.png" alt="medREX">
+    <a href="about.html">About Project</a>
+  </nav> -->
+  <header>
+    <div class="navbar">
+        <div class="content" id = "left">
+            <img src="1.png" alt="">
+        </div>
+        <div class="content" id="right">
+            <button class="keys"><a href="#">Home</a></button>
+            <button class="keys"><a href="#">Profile</a></button>
+            <button class="keys"><a href="#">Medical Data</a></button>
+            <button class="keys"><a href="helpline.html">Helpline</a></button>
+            <button class="keys"><a href="about.html">About</a></button>
+            <button class="keys" id="appointment"><a href="#">Appointments</a></button>
+        </div>
+    </div>
+</header>
+  <h1>A Smarter Way to Store and Retrieve Medical Data</h1>
+  <div class="container">
+    <div class="signup-box">
+      <h2>Sign Up</h2>
+      <form>
+        <div class="form-input">
+          <label for="username">username</label>
+          <input type="text" placeholder="Username" id="username"required>
+        </div>
+        <div class="form-input">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Email" id="email"required>
+        </div>
+        <div class="form-input">
+          <label for="password">Password:</label>
+          <input type="password" placeholder="Password" id="password"required>
+        </div>
+        <div class="form-input">
+          <label for="age">Age</label>
+          <input type="number" placeholder="Age" id="age"required>
+        </div>
+        <div class="form-input">
+          <label for="gender">Gender: </label>
+          <input type="radio" id="gender" name="gender" value="male" required>Male
+          <input type="radio" id="gender" name="gender" value="female" required>Female
+          <input type="radio" id="gender" name="gender" value="other" required>Other
+        </div>
+        <div class="form-input">
+          <label for="phone">phone</label>
+          <input type="tel" id="phone"placeholder="Phone Number" required>
+        </div>
+        <div class="form-input">
+          <input type="submit" value="Sign Up" onclick="storeUserData()">
+          <!-- <input type="button" value="signup" onclick="storeUserData()"> -->
+        </div>
+      </form>
+      <p class="signin-link">Already have an account? <a href="login.html">Sign in</a></p>
+    </div>
+  </div>
+
+</body>

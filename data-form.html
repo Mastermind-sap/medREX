@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medication Form</title>
+	<script>
+		function storeMedicationData() {
+			var medications = document.getElementById("medications").value;
+			var startDate = document.getElementById("start-date").value;
+			var doctor = document.getElementById("doctor").value;
+			var data = {
+				medications: medications,
+				startDate: startDate,
+				doctor: doctor
+			};
+			localStorage.setItem("medicationData", JSON.stringify(data));
+			alert("Medication data stored successfully!");
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="medications">Medications:</label>
+		<input type="text" id="medications" required><br><br>
+		
+		<label for="start-date">Start Date:</label>
+		<input type="date" id="start-date" required><br><br>
+		
+		<label for="doctor">Doctor Consulted:</label>
+		<input type="text" id="doctor" required><br><br>
+		
+		<input type="button" value="Submit" onclick="storeMedicationData()">
+	</form>
+</body>
+</html>

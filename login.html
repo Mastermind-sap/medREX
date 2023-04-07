@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>medREX login</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        function checkLogin() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if (email == localStorage.getItem("email") && password == localStorage.getItem("password")) {
+                window.location.href = "medicaldata.html";
+            } else {
+                alert("Invalid email or password");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="content" id="left">
+                <img src="1.png" alt="">
+            </div>
+            <div class="content" id="right">
+                <button class="keys"><a href="#">Home</a></button>
+                <button class="keys"><a href="#">Profile</a></button>
+                <button class="keys"><a href="medicaldata.html">Medical Data</a></button>
+                <button class="keys"><a href="helpline.html">Helpline</a></button>
+                <button class="keys"><a href="about.html">About</a></button>
+                <button class="keys" id="appointment"><a href="#">Appointments</a></button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="signup-box">
+            <h2>login</h2>
+            <form>
+                <div class="form-input">
+                    <input type="email" placeholder="Email" id="email" required>
+                </div>
+                <div class="form-input">
+                    <input type="password" placeholder="Password" id="password" required>
+                </div>
+                <div class="form-input">
+                    <!-- <input type="submit" value="Sign Up" onclick="checkLogin()"> -->
+                    <input type="button" value="Login" onclick="checkLogin()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
